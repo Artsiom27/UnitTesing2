@@ -1,16 +1,20 @@
 package shop;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class RealItemTest {
 
-    RealItem weight = new RealItem();
+    RealItem real = new RealItem();
 
     @Test
-    void getWeight() {
-        assertNotNull(weight);
-        System.out.println(weight);
+    void creatRealItms() {
+        real.setName("Test");
+        real.setPrice(744);
+        real.setWeight(56);
+
+        String expected = "Class: class shop.RealItem; Name: Test; Price: 744.0; Weight: 56.0";
+        Assert.assertEquals(expected, real.toString());
+
     }
 }

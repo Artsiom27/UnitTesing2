@@ -1,21 +1,18 @@
 package shop;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
 public class VirtualItemTest {
-    VirtualItem SizeOnDisk = new VirtualItem();
-    double virt1 = 444;
+    VirtualItem virt = new VirtualItem();
 
     @Test
-    public void testSetSizeOnDisk() {
-    }
+    void creatVirtualItms() {
+        virt.setName("Virt");
+        virt.setPrice(100);
+        virt.setSizeOnDisk(512);
 
-    @Test
-    public void testGetSizeOnDisk() {
-    }
-
-    @Test
-    public void testTestToString() {
+        String expected = "Class: class shop.VirtualItem; Name: Virt; Price: 100.0; Size on disk: 512.0";
+        Assert.assertEquals(expected, virt.toString());
     }
 }
