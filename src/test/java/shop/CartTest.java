@@ -1,43 +1,33 @@
 package shop;
 
-
+import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.testng.Assert.*;
 
 public class CartTest {
     Cart cart3 = new Cart("hhh");
     RealItem testt = new RealItem();
     private List<RealItem> realItems;
-    double TAX = 0.2;
-    double price = 666;
 
 
     @Test
+    @DisplayName("with groupedAssertions")
     public void testGetCartName() {
-    }
+        testt.setName("MyCart");
+        testt.setPrice(50);
+        testt.setWeight(30.5);
 
-    @Test
-    public void testAddRealItem() {
-    }
+        cart3.addRealItem(testt);
+        assertNotNull(testt);
 
-    @Test
-    public void testDeleteRealItem() {
-    }
+        cart3.deleteRealItem(testt);
 
-    @Test
-    public void testAddVirtualItem() {
-    }
-
-    @Test
-    public void testDeleteVirtualItem() {
-    }
-
-    @Test
-    public void testShowItems() {
-    }
-
-    @Test
-    public void testGetTotalPrice() {
+        assertAll("realItems",
+                () -> assertNull(realItems),
+                () -> assertEquals(60.0, cart3.getTotalPrice()));
     }
 }
