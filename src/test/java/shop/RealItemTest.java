@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 
 public class RealItemTest {
 
-    RealItem real = new RealItem();
 
     @Test
     void creatRealItms() {
+        RealItem real = new RealItem();
         real.setName("Test");
         real.setPrice(744);
         real.setWeight(56);

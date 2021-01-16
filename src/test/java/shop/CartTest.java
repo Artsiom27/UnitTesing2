@@ -9,24 +9,22 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.testng.Assert.*;
 
 public class CartTest {
-    Cart cart3 = new Cart("hhh");
-    RealItem testt = new RealItem();
+
     private List<RealItem> realItems;
 
 
     @Test
-    @DisplayName("with groupedAssertions")
+    @DisplayName("with groupedAssertions for example")
     public void testGetCartName() {
+        Cart cart3 = new Cart("hhh");
+        RealItem testt = new RealItem();
+
         testt.setName("MyCart");
         testt.setPrice(50);
         testt.setWeight(30.5);
-
         cart3.addRealItem(testt);
-        assertNotNull(testt);
 
-        cart3.deleteRealItem(testt);
-
-        assertAll("realItems",
+          assertAll("realItems",
                 () -> assertNull(realItems),
                 () -> assertEquals(60.0, cart3.getTotalPrice()));
     }

@@ -4,10 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class VirtualItemTest {
-    VirtualItem virt = new VirtualItem();
+
 
     @Test
     void creatVirtualItms() {
+        VirtualItem virt = new VirtualItem();
         virt.setName("Virt");
         virt.setPrice(100);
         virt.setSizeOnDisk(512);

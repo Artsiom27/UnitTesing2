@@ -1,9 +1,10 @@
 package parser;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.testng.annotations.Test;
 import shop.Cart;
 import shop.RealItem;
@@ -14,22 +15,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertNull;
 
 public class JsonParserTest {
+    private RealItem real;
+    private Cart artsiomCart;
+    private Parser parser;
 
-    Cart artsiomCart = new Cart("artsiom-cart");
-    RealItem real = new RealItem();
-    Parser parser = new JsonParser();
-    //Cart cart;
-    //File File1 = new File("src/main/resources/artsiom-cart");
-    //File File2 = new File("arsiom-cart.json");
-    //File File3 = new File("artsiom-cart");
-    //File File4 = new File(String.valueOf(artsiomCart));
-    //File File5 = new File(String.valueOf(cart));
 
+    @BeforeEach
+    public void init() {
+        Cart artsiomCart = new Cart("artsiom-cart");
+        RealItem real = new RealItem();
+        Parser parser = new JsonParser();
+
+    }
 
     @Test
     @DisplayName("test of creating a new File json")
