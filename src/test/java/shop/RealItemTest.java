@@ -1,7 +1,9 @@
 package shop;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class RealItemTest {
 
@@ -14,7 +16,7 @@ public class RealItemTest {
         real.setWeight(56);
 
         String expected = "Class: class shop.RealItem; Name: Test; Price: 744.0; Weight: 56.0";
-        Assert.assertEquals(expected, real.toString());
+        assertEquals(expected, real.toString());
 
     }
 }

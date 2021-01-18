@@ -1,7 +1,8 @@
 package shop;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VirtualItemTest {
 
@@ -14,6 +15,6 @@ public class VirtualItemTest {
         virt.setSizeOnDisk(512);
 
         String expected = "Class: class shop.VirtualItem; Name: Virt; Price: 100.0; Size on disk: 512.0";
-        Assert.assertEquals(expected, virt.toString());
+        assertEquals(expected, virt.toString());
     }
 }
